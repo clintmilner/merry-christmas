@@ -16,16 +16,15 @@
   border-radius: 50%;
   opacity: 0.8;
   animation: snowfall linear infinite;
-  --tilt: 0deg;
 }
 
 @keyframes snowfall {
   0% {
-    transform: translateY(-10vh) translateX(calc(var(--tilt) * -0.2));
+    transform: translateY(-10vh) translateX(0);
     opacity: 1;
   }
   100% {
-    transform: translateY(100vh) translateX(calc(var(--tilt) * 1.5));
+    transform: translateY(100vh) translateX(20px);
     opacity: 0.3;
   }
 } 
