@@ -59,8 +59,8 @@
 }
 
 .circle-large {
-  width: calc(var(--circle-size) + 20px);
-  height: calc(var(--circle-size) + 20px);
+  width: calc(var(--circle-size) + 10px);
+  height: calc(var(--circle-size) + 10px);
 }
 
 
@@ -71,7 +71,7 @@ h1 {
   line-height: 1;
   color: var(--white);
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   letter-spacing: 1px;
 }
 

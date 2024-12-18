@@ -4,16 +4,17 @@ import './Tree.css';
 // Add prop type for Circle
 interface CircleProps {
   forceColor?: string;
+  isFirst?: boolean;
 }
 
-const Circle: React.FC<CircleProps> = ({ forceColor }) => {
+const Circle: React.FC<CircleProps> = ({ forceColor, isFirst = false }) => {
   const [color, setColor] = useState(forceColor ?? 'var(--tree-green)');
   
   useEffect(() => {
     if (forceColor) return;
 
     // Fixed interval of 125ms instead of random
-    const interval = 1250;
+    const interval = 1400;
     
     const timer = setInterval(() => {
       if (Math.random() < 0.7) {
@@ -33,7 +34,12 @@ const Circle: React.FC<CircleProps> = ({ forceColor }) => {
     return () => clearInterval(timer);
   }, [forceColor]);
 
-  return <div className="circle" style={{ backgroundColor: color }} />;
+  return (
+    <div 
+      className={`circle ${isFirst ? 'circle-large' : ''}`}
+      style={{ backgroundColor: color }}
+    />
+  );
 };
 
 const Tree = () => {
@@ -73,6 +79,7 @@ const Tree = () => {
             <Circle 
               key={circleIndex} 
               forceColor={rowIndex === 0 ? 'var(--light-yellow)' : undefined}
+              isFirst={rowIndex === 0 && circleIndex === 0}
             />
           ))}
         </div>
