@@ -1,0 +1,80 @@
+:root {
+  --light-red: #ff6b6b;
+  --light-blue: #4ecdc4;
+  --light-yellow: #ffe66d;
+  --light-purple: #a374db;
+  --light-orange: #ff9f43;
+  --tree-green: #2ecc707a;
+  --circle-size: 20px;
+  --white: #fffffff6;
+}
+
+.tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.tree-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  transition: all 400ms ease-in-out;
+}
+
+.circle[style*="--light-red"] {
+  box-shadow: 0 0 15px 5px rgba(255, 107, 107, 0.4);
+}
+
+.circle[style*="--light-blue"] {
+  box-shadow: 0 0 15px 5px rgba(78, 205, 196, 0.4);
+}
+
+.circle[style*="--light-yellow"] {
+  box-shadow: 0 0 15px 5px rgba(255, 230, 109, 0.4);
+}
+
+.circle[style*="--light-purple"] {
+  box-shadow: 0 0 15px 5px rgba(163, 116, 219, 0.4);
+}
+
+.circle[style*="--light-orange"] {
+  box-shadow: 0 0 15px 5px rgba(255, 159, 67, 0.4);
+}
+
+.circle[style*="--tree-green"] {
+  box-shadow: none;
+}
+
+.circle-large {
+  width: calc(var(--circle-size) + 20px);
+  height: calc(var(--circle-size) + 20px);
+}
+
+
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: clamp(1.5rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  color: var(--white);
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 400px) {
+  .tree-container {
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+}
